@@ -11,7 +11,7 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         NSString *selfPath = [[NSString stringWithCString:__FILE__ encoding:NSUTF8StringEncoding] stringByDeletingLastPathComponent];
-        NSString *configPath = [selfPath stringByAppendingPathComponent:@"config.plist"];
+        NSString *configPath = [@"~/gitlabapiConfig.plist" stringByStandardizingPath];
         NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:configPath];
         
         TestCommand *aCommand = [[TestCommand alloc] initWithAconfigDic:dic];
